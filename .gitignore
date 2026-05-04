@@ -1,0 +1,4 @@
+data/g_patent_abstract.tsv
+data/g_patent.tsv
+data/g_persistent_assignee.tsv
+database/patents.db

@@ -1,0 +1,227 @@
+{
+  "generated": "2026-04-24T16:01:05.848166",
+  "summary": {
+    "total_patents": 100000,
+    "total_inventors": 400,
+    "total_companies": 7,
+    "sample_note": "Data sampled for memory efficiency",
+    "date_range": "2018 - 2018"
+  },
+  "q1_top_inventors": [
+    {
+      "inventor_id": 209,
+      "name": "John Davis",
+      "country": "Canada",
+      "patent_count": 697
+    },
+    {
+      "inventor_id": 212,
+      "name": "James Schmidt",
+      "country": "France",
+      "patent_count": 693
+    },
+    {
+      "inventor_id": 118,
+      "name": "Klaus Durand",
+      "country": "UK",
+      "patent_count": 689
+    },
+    {
+      "inventor_id": 33,
+      "name": "William Taylor",
+      "country": "Switzerland",
+      "patent_count": 687
+    },
+    {
+      "inventor_id": 317,
+      "name": "Joseph Miller",
+      "country": "Switzerland",
+      "patent_count": 685
+    },
+    {
+      "inventor_id": 153,
+      "name": "David Martinez",
+      "country": "Germany",
+      "patent_count": 683
+    },
+    {
+      "inventor_id": 259,
+      "name": "Ahmad Tanaka",
+      "country": "Netherlands",
+      "patent_count": 683
+    },
+    {
+      "inventor_id": 193,
+      "name": "David Williams",
+      "country": "Switzerland",
+      "patent_count": 680
+    },
+    {
+      "inventor_id": 255,
+      "name": "Charles Schmidt",
+      "country": "Japan",
+      "patent_count": 680
+    },
+    {
+      "inventor_id": 309,
+      "name": "James Smith",
+      "country": "South Korea",
+      "patent_count": 679
+    },
+    {
+      "inventor_id": 148,
+      "name": "Sarah Rodriguez",
+      "country": "Germany",
+      "patent_count": 677
+    },
+    {
+      "inventor_id": 203,
+      "name": "Lisa Davis",
+      "country": "Germany",
+      "patent_count": 677
+    },
+    {
+      "inventor_id": 97,
+      "name": "Hans Miller",
+      "country": "Canada",
+      "patent_count": 676
+    },
+    {
+      "inventor_id": 348,
+      "name": "Klaus Moore",
+      "country": "Germany",
+      "patent_count": 674
+    },
+    {
+      "inventor_id": 164,
+      "name": "David Rodriguez",
+      "country": "Canada",
+      "patent_count": 673
+    },
+    {
+      "inventor_id": 137,
+      "name": "David Durand",
+      "country": "UK",
+      "patent_count": 672
+    },
+    {
+      "inventor_id": 128,
+      "name": "Klaus Schmidt",
+      "country": "France",
+      "patent_count": 671
+    },
+    {
+      "inventor_id": 21,
+      "name": "Pierre Schmidt",
+      "country": "China",
+      "patent_count": 669
+    },
+    {
+      "inventor_id": 238,
+      "name": "David Davis",
+      "country": "France",
+      "patent_count": 668
+    },
+    {
+      "inventor_id": 258,
+      "name": "Marco Wilson",
+      "country": "Germany",
+      "patent_count": 665
+    }
+  ],
+  "q2_top_companies": [
+    {
+      "company_id": 1,
+      "name": "0",
+      "patent_count": 92516
+    },
+    {
+      "company_id": 2,
+      "name": "1",
+      "patent_count": 1790
+    },
+    {
+      "company_id": 3,
+      "name": "2",
+      "patent_count": 121
+    },
+    {
+      "company_id": 4,
+      "name": "3",
+      "patent_count": 19
+    },
+    {
+      "company_id": 6,
+      "name": "4",
+      "patent_count": 4
+    },
+    {
+      "company_id": 5,
+      "name": "5",
+      "patent_count": 2
+    },
+    {
+      "company_id": 7,
+      "name": "7",
+      "patent_count": 1
+    }
+  ],
+  "q3_countries": [
+    {
+      "country": "Netherlands",
+      "patent_count": 26796,
+      "percentage": 26.8
+    },
+    {
+      "country": "Canada",
+      "patent_count": 24876,
+      "percentage": 24.88
+    },
+    {
+      "country": "Switzerland",
+      "patent_count": 24240,
+      "percentage": 24.24
+    },
+    {
+      "country": "France",
+      "patent_count": 23105,
+      "percentage": 23.11
+    },
+    {
+      "country": "USA",
+      "patent_count": 22671,
+      "percentage": 22.67
+    },
+    {
+      "country": "Japan",
+      "patent_count": 21987,
+      "percentage": 21.99
+    },
+    {
+      "country": "South Korea",
+      "patent_count": 21598,
+      "percentage": 21.6
+    },
+    {
+      "country": "China",
+      "patent_count": 20908,
+      "percentage": 20.91
+    },
+    {
+      "country": "UK",
+      "patent_count": 20328,
+      "percentage": 20.33
+    },
+    {
+      "country": "Germany",
+      "patent_count": 19068,
+      "percentage": 19.07
+    }
+  ],
+  "q4_trends": [
+    {
+      "year": 2018,
+      "patent_count": 100000
+    }
+  ]
+}
