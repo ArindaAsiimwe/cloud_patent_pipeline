@@ -3,3 +3,5 @@ data/g_patent.tsv
 data/g_persistent_assignee.tsv
 database/patents.db
 output/clean_patents.csv
+output/clean_inventors.csv
+output/clean_companies.csv
