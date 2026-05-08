@@ -65,7 +65,6 @@ def get_db_connection():
             return sqlite3.connect(db_path)
     
     st.error("Database not found!")
-    st.info("Please run patent_pipeline.py on Kaggle first to generate the database.")
     st.stop()
 
 @st.cache_data

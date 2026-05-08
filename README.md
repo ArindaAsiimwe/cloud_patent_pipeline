@@ -8,7 +8,7 @@ interactive visualizations.
 KEY LINKS
 
 📊 INTERACTIVE DASHBOARD:
-   https://github.com/ArindaAsiimwe/cloud_patent_pipeline
+   https://cloudpatentpipeline-gy8xprrrcpniykfyy2aukb.streamlit.app/
    (Launch with: streamlit run dashboard.py)
 
 🔗 GITHUB REPOSITORY:
