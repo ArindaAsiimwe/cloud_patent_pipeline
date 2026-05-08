@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """
 Patent Intelligence Data Pipeline - DATA VISUALIZATIONS
-Generates charts and graphs for patent analysis
+Generates charts and graphs for patent analysis from database
 """
 
 import pandas as pd
+import sqlite3
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
+import os
 
 # Set style
 sns.set_style("whitegrid")
@@ -17,19 +19,86 @@ OUTPUT_FOLDER = "output"
 
 Path(OUTPUT_FOLDER).mkdir(exist_ok=True)
 
-# Load data from CSV files (from pipeline output)
-print("Loading data from output files...")
+# Connect to database
+print("Connecting to database...")
+db_paths = [
+    "/kaggle/working/database/patents.db",
+    "database/patents.db"
+]
+
+conn = None
+for db_path in db_paths:
+    if os.path.exists(db_path):
+        print(f"✓ Found database at {db_path}")
+        conn = sqlite3.connect(db_path)
+        break
+
+if conn is None:
+    print("✗ Database not found!")
+    print("Make sure to run patent_pipeline.py on Kaggle first to generate the database.")
+    exit(1)
+
+# Load data from database using SQL queries
+print("\nLoading data from database...")
 try:
-    df_patents = pd.read_csv(f"{OUTPUT_FOLDER}/clean_patents.csv")
-    df_inventors = pd.read_csv(f"{OUTPUT_FOLDER}/clean_inventors.csv")
-    df_top_inventors = pd.read_csv(f"{OUTPUT_FOLDER}/top_inventors.csv")
-    df_top_companies = pd.read_csv(f"{OUTPUT_FOLDER}/top_companies.csv")
-    df_country_trends = pd.read_csv(f"{OUTPUT_FOLDER}/country_trends.csv")
-    df_patents_by_year = pd.read_csv(f"{OUTPUT_FOLDER}/patents_by_year.csv")
-    print("✓ Data loaded successfully")
-except FileNotFoundError as e:
+    # Q1: Top Inventors
+    df_top_inventors = pd.read_sql("""
+        SELECT 
+            i.inventor_id,
+            i.name,
+            i.country,
+            COUNT(DISTINCT pir.patent_id) as patent_count
+        FROM inventors i
+        LEFT JOIN patent_inventor_relationships pir ON i.inventor_id = pir.inventor_id
+        GROUP BY i.inventor_id
+        ORDER BY patent_count DESC
+        LIMIT 100
+    """, conn)
+    
+    # Q2: Top Companies
+    df_top_companies = pd.read_sql("""
+        SELECT 
+            c.company_id,
+            c.name,
+            COUNT(DISTINCT pcr.patent_id) as patent_count
+        FROM companies c
+        LEFT JOIN patent_company_relationships pcr ON c.company_id = pcr.company_id
+        GROUP BY c.company_id
+        ORDER BY patent_count DESC
+        LIMIT 100
+    """, conn)
+    
+    # Q3: Countries
+    df_country_trends = pd.read_sql("""
+        SELECT 
+            i.country,
+            COUNT(DISTINCT pir.patent_id) as patent_count,
+            ROUND(100.0 * COUNT(DISTINCT pir.patent_id) / (SELECT COUNT(DISTINCT patent_id) FROM patent_inventor_relationships), 2) as percentage
+        FROM inventors i
+        JOIN patent_inventor_relationships pir ON i.inventor_id = pir.inventor_id
+        GROUP BY i.country
+        ORDER BY patent_count DESC
+    """, conn)
+    
+    # Q4: Trends Over Time
+    df_patents_by_year = pd.read_sql("""
+        SELECT 
+            year,
+            COUNT(*) as patent_count
+        FROM patents
+        WHERE year IS NOT NULL AND year > 1975
+        GROUP BY year
+        ORDER BY year ASC
+    """, conn)
+    
+    # Load full tables for summary statistics
+    df_patents = pd.read_sql("SELECT * FROM patents", conn)
+    df_inventors = pd.read_sql("SELECT * FROM inventors", conn)
+    
+    print("✓ Data loaded successfully from database")
+except Exception as e:
     print(f"✗ Error: {e}")
-    print("Make sure to run patent_pipeline.py first to generate output files.")
+    conn.close()
     exit(1)
 
 # VISUALIZATION 1: TOP INVENTORS
@@ -236,6 +305,9 @@ plt.close()
 print("\n" + "=" * 80)
 print("✓ VISUALIZATIONS COMPLETE")
 print("=" * 80)
+
+# Close database connection
+conn.close()
 
 print("\n VISUALIZATIONS CREATED:")
 print("  ✓ top_inventors_chart.png")
