@@ -1,26 +1,21 @@
-================================================================================
-        GLOBAL PATENT INTELLIGENCE DATA PIPELINE - PROJECT SUBMISSION
-================================================================================
+GLOBAL PATENT INTELLIGENCE DATA PIPELINE - PROJECT SUBMISSION
 
 PROJECT OVERVIEW:
 This project implements a complete data engineering pipeline that collects, 
 cleans, stores, and analyzes patent data using Python, pandas, SQL, and 
 interactive visualizations.
 
-================================================================================
-                            KEY LINKS
-================================================================================
+KEY LINKS
 
 📊 INTERACTIVE DASHBOARD:
-   https://github.com/ArindaAsiimwe/patent-pipeline
+   https://github.com/ArindaAsiimwe/cloud_patent_pipeline
    (Launch with: streamlit run dashboard.py)
 
 🔗 GITHUB REPOSITORY:
-   https://github.com/ArindaAsiimwe/patent-pipeline
+   https://github.com/ArindaAsiimwe/cloud_patent_pipeline
 
-================================================================================
-                        PROJECT DELIVERABLES
-================================================================================
+PROJECT DELIVERABLES
+
 
 📁 CODE FILES:
    ✓ patent_pipeline.py        - Main data pipeline script
@@ -36,9 +31,8 @@ interactive visualizations.
 📁 DATABASE:
    ✓ database/patents.db       - SQLite database with normalized schema
 
-================================================================================
-                         PIPELINE FEATURES
-================================================================================
+PIPELINE FEATURES
+
 
 DATA PROCESSING:
 ✓ Loads 3 TSV datasets (~14GB) efficiently
@@ -183,9 +177,8 @@ DASHBOARD CAPABILITIES:
 ✓ Color-coded metrics with delta indicators
 ✓ Export-ready visualizations
 
-================================================================================
-                       DATABASE SCHEMA
-================================================================================
+DATABASE SCHEMA
+
 
 TABLES:
 ├── patents (patent_id, title, filing_date, year)
@@ -201,9 +194,8 @@ RELATIONSHIPS:
 - Each inventor belongs to a country
 - Abstracts linked to patents
 
-================================================================================
-                         FOLDER STRUCTURE
-================================================================================
+FOLDER STRUCTURE
+
 
 patent-pipeline/
 ├── README.md                          # Main project documentation
@@ -233,9 +225,8 @@ patent-pipeline/
     ├── g_patent_abstract.tsv          # Patent abstracts
     └── g_persistent_assignee.tsv      # Company assignments
 
-================================================================================
-                          TECHNOLOGIES USED
-================================================================================
+TECHNOLOGIES USED
+
 
 Backend & Processing:
 ✓ Python 3
@@ -253,10 +244,7 @@ Database:
 ✓ SQLite - Lightweight relational database
 ✓ SQL - 7 advanced queries (JOINs, CTEs, Window Functions)
 
-================================================================================
-                       PERFORMANCE METRICS
-================================================================================
-
+PERFORMANCE METRICS
 Processing Speed:
 ✓ Optimized for large files (14GB+ datasets)
 ✓ Memory-efficient chunked reading
@@ -274,17 +262,6 @@ Query Performance:
 ✓ Optimized JOIN operations
 ✓ CTE and window function support
 
-================================================================================
-                         AUTHOR & CONTACT
-================================================================================
 
-Project: Global Patent Intelligence Data Pipeline
-Student: Arinda Asiimwe
-Year: Year 4 Semester 2
-Course: Cloud Computing & Data Engineering
+GitHub: https://github.com/ArindaAsiimwe/cloud_patent_pipeline
 
-GitHub: https://github.com/ArindaAsiimwe/patent-pipeline
-
-================================================================================
-
-Generated: May 2026
